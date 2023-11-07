@@ -1,0 +1,30 @@
+form {
+    background-color: #35A29F;
+    border-radius: 10px;
+    box-shadow: -3px -3px 3px #97FEED;
+    padding: 25px;
+    margin: 20px;
+
+    .error {
+        color: #ff00006c;
+    }
+
+
+    fieldset {
+        border: 2px solid #97FEED;
+        border-radius: 10px;
+    }
+
+    .subject {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #subjects {
+        width: 30%;
+    }
+
+    #message {
+        width: 30%;
+    }
+}

@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Bellota+Text:wght@700&display=swap");
+body {
+  font-family: "Bellota Text", sans-serif;
+}
+
+body {
+  color: #071952;
+}
+body .error {
+  color: rgba(255, 0, 0, 0.479);
+}
+body .thanks {
+  text-align: center;
+  color: rgba(7, 25, 82, 0.8);
+  -webkit-text-stroke-color: #071952;
+  -webkit-text-stroke-width: 1px;
+  text-shadow: 5px 5px 55px white;
+  text-transform: uppercase;
+}
+body .thanks h1 {
+  font-size: 150px;
+}
+body .thanks h3 {
+  font-weight: 700;
+  font-size: 50px;
+}
+
+.button {
+  height: 25px;
+  width: 60px;
+  margin: 15px;
+  border-radius: 5px;
+  border: none;
+  background-color: #071952;
+  box-shadow: 1px 1px 4px #071952;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px;
+}
+.button #button {
+  background-color: transparent;
+  border: none;
+  color: #97FEED;
+  text-transform: uppercase;
+}
+
+form {
+  background-color: #35A29F;
+  border-radius: 10px;
+  box-shadow: -3px -3px 3px #97FEED;
+  padding: 25px;
+  margin: 20px;
+}
+form .error {
+  color: rgba(255, 0, 0, 0.4235294118);
+}
+form fieldset {
+  border: 2px solid #97FEED;
+  border-radius: 10px;
+}
+form .subject {
+  display: flex;
+  flex-direction: column;
+}
+form #subjects {
+  width: 30%;
+}
+form #message {
+  width: 30%;
+}
+
+body {
+  background: linear-gradient(90deg, rgb(11, 102, 106) 0%, rgb(20, 185, 193) 100%);
+}
+
+header {
+  text-align: center;
+}
+header img {
+  padding: 0;
+  width: 50%;
+}
+
+main {
+  margin: auto;
+  width: 80%;
+}/*# sourceMappingURL=style.css.map */
