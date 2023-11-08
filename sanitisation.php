@@ -1,8 +1,6 @@
 <?php
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
-//sanitiser
-function test_input($data)
+//function sanitiser
+function sanitize($data)
 {
     $data = trim($data);
     $data = stripslashes($data);
@@ -10,8 +8,8 @@ function test_input($data)
     return $data;
 }
 
-$nameErr = $firstnameErr = $genderErr = $emailErr = $countryErr = $subjectsErr = "";
-$name = $firstname = $gender = $email = $country = $subjects = $message = "";
+$nameErr = $firstnameErr = $genderErr = $emailErr = $countryErr = $subjectErr = "";
+$name = $firstname = $gender = $email = $country = $subject = $message = "";
 
 //vérifier que le formulaire a été soumis en utilisant la méthode POST.
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -21,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // si variable existe
     if (isset($_POST['name'])) {
         //sanitiser
-        $name = test_input($_POST["name"]);
+        $name = sanitize($_POST["name"]);
         //vérifier si il est vide avec empty()
         //Si la validation échoue, afficher un message d'erreur
         if (empty($name)) {
@@ -38,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     //si variable existe
     if (isset($_POST['firstname'])) {
         //sanitiser avec la function test_input
-        $firstname = test_input($_POST["firstname"]);
+        $firstname = sanitize($_POST["firstname"]);
         //vérifier si il est vide avec empty(). 
         //Si la validation échoue, afficher un message d'erreur
         if (empty($firstname)) {
@@ -54,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     //si variable existe
     if (isset($_POST['gender'])) {
         //sanitiser
-        $gender = test_input($_POST['gender']);
+        $gender = sanitize($_POST['gender']);
         //si validation échoue, afficher message d'erreur
     } else {
         $genderErr = 'Gender is required';
@@ -64,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     //si variable existe 
     if (isset($_POST['email'])) {
         //sanitiser
-        $email = test_input($_POST["email"]);
+        $email = sanitize($_POST["email"]);
         //valider l'adresse e-mail en utilisant le filtre FILTER_VALIDATE_EMAIL
         if (empty($_POST["email"])) {
             // L'adresse e-mail est valide
@@ -80,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     //si variable existe
     if (isset($_POST['country'])) {
         //sanitiser
-        $country = test_input($_POST["country"]);
+        $country = sanitize($_POST["country"]);
         //vérifier si il est vide avec empty(). 
         //Si la validation échoue, afficher un message d'erreur
         if (empty($country)) {
@@ -95,7 +93,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     //SUBJECT
     if (isset($_POST['subject'])) {
         //alors $subject prend la valeur de $_POST['subject']
-        $subject = test_input($_POST['subject']);
+        $subject = sanitize($_POST['subject']);
         //si validation échoue, afficher message d'erreur
     } else {
         $subjectErr = 'subject is required';
@@ -106,7 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     //si variable existe
     if (isset($_POST['message'])) {
         //sanitiser
-        $message = test_input($_POST['message']);
+        $message = sanitize($_POST['message']);
     }
 
 
@@ -114,15 +112,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Si toutes les données sont valides, vous pouvez envoyer un e-mail
     if ($nameErr === "" && $firstnameErr === "" && $genderErr === "" && $emailErr === "" && $countryErr === "") {
         // Redirection vers la page de remerciement
-        header("Location: merci.html");
+        header("Location: merci.php");
+
+        $to = "admin@wampserver.invalid";
+        $subject = "New form submited";
+        $message = "Name: $name\nFirstname: $firstname\nGender: $gender\nE-mail: $email\nCountry: $country\nSubject: $subject\nMessage: $message";
+        if (mail($to, $subject, $message)) {
+        } else {
+            echo "Désolé, une erreur s'est produite lors de l'envoi de l'e-mail.";
+        }
     }
 }
-
-
-        // $to = "lili-p@hotmail.com";
-        // $subject = "Nouveau formulaire soumis";
-        // $message = "Nom: $name\nPrénom: $firstname\nGenre: $gender\nE-mail: $email\nPays: $country\nSujet: $subject\nMessage: $message";
-        // if (mail($to, $subject, $message)) {
-        // } else {
-        //     echo "Désolé, une erreur s'est produite lors de l'envoi de l'e-mail.";
-        // }

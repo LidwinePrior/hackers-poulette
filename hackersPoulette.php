@@ -61,7 +61,7 @@ require_once('./sanitisation.php');
 
             <fieldset class="subject">
                 <legend>Subject</legend>
-                <label for="subjects">what do you need? <span class="error">*<?php echo $subjectsErr; ?></span></label>
+                <label for="subjects">what do you need? <span class="error">*<?php echo $subjectErr; ?></span></label>
 
                 <select id="subjects" name="subjects">
 
