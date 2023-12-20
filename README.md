@@ -1,5 +1,5 @@
 
-# hackers-poulette
+# Hackers-poulette
 
  Create a fully-functioning online "contact support" form, in PHP.
  
@@ -9,8 +9,8 @@
 
 ## Lessons Learned
  - sanitize
- -validate
- -answer the user
+ - validate
+ - answer the user
 
 
 ## Must have
