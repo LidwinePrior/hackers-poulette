@@ -19,30 +19,6 @@ require_once('./sanitisation.php');
     </div>
     <div class="print">
         <h4>Summary</h4>
-        <?php
-        echo '<pre>';
-        print_r("Name:" . $name);
-        echo '</pre>';
-        echo '<pre>';
-        print_r("Firstname:" . $firstname);
-        echo '</pre>';
-        echo '<pre>';
-        print_r("Gender:" . $gender);
-        echo '</pre>';
-        echo '<pre>';
-        print_r("Email:" . $email);
-        echo '</pre>';
-        echo '<pre>';
-        print_r("Country:" . $country);
-        echo '</pre>';
-        echo '<pre>';
-        print_r("Subject:" . $subject);
-        echo '</pre>';
-        echo '<pre>';
-        print_r("Message:" . $message);
-        echo '</pre>';
-
-        ?>
     </div>
 </body>
 
