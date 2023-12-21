@@ -17,15 +17,12 @@ The goal of this project is to create a fully-functioning online "contact suppor
 - Accessibility considerations in HTML
 - Usage of Sass
 - PHP programming for form processing
-
-
-## Must have
-   - the form's html code must be semantically valid
-   - in case of wrong input, the form should display a useful visual clue about the error
-   - display the error message near the correct input field
-   - the error message must be readable (helpful to users)
-   - the form has to be sanitised and validated (server side)
-   - if all required inputs are valid, the script should respond by email to a given address
+- the form's html code must be semantically valid
+- in case of wrong input, the form should display a useful visual clue about the error
+- display the error message near the correct input field
+- the error message must be readable (helpful to users)
+- the form has to be sanitised and validated (server side)
+- if all required inputs are valid, the script should respond by email to a given address
 
      
 ## Authors
